@@ -1,41 +1,87 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>404 Not Found</title>
-    <style>
-      body {
-        background-color: white;
-        color: black;
-        font-family: "Courier New", Courier, monospace;
-        padding: 40px;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>404 Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "Courier New", Courier, monospace;
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
 
-      h1 {
-        font-size: 24px;
-        color: red;
-      }
+    h1 {
+      font-size: 28px;
+      color: #cc0000;
+      margin-bottom: 10px;
+    }
 
-      p {
-        font-size: 16px;
-      }
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
 
-      hr {
-        margin: 20px 0;
-      }
+    pre {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 12px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.5;
+    }
 
-      .footer {
-        font-size: 14px;
-        color: #666;
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 30px 0;
+    }
+
+    .footer {
+      font-size: 14px;
+      color: #666666;
+    }
+
+    .footer strong {
+      color: #000000;
+    }
+
+    .sid {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>404 Not Found</h1>
+  <p>The requested URL was not found on this server.</p>
+  <pre>
+Error Code: 404
+Error Type: Not Found
+Method: GET
+Server: Nginx/Apache 
+  </pre>
+  <div class="sid" id="sid">SID: generating...</div>
+  <hr>
+  <div class="footer">
+    Powered by <strong>ALVIAN UXIO</strong> • <strong>ALVINO PROJECT</strong> • <strong>MEYCI</strong> • <strong>EMILIA</strong>
+  </div>
+
+  <script>
+    // Generate fake Session ID (SID) ala server
+    const randomSID = () => {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let sid = '';
+      for (let i = 0; i < 16; i++) {
+        sid += chars[Math.floor(Math.random() * chars.length)];
       }
-    </style>
-  </head>
-  <body>
-    <h1>Not Found</h1>
-    <p>The requested URL was not found on this server.</p>
-    <hr>
-    <div class="footer">
-      Powered by <strong>ALVIAN UXIO</strong> · <strong>ALVINO PROJECT</strong> · <strong>MEYCI</strong> · <strong>EMILIA</strong>
-    </div>
-  </body>
+      return sid;
+    };
+    document.getElementById('sid').textContent = "SID: " + randomSID();
+  </script>
+</body>
 </html>
